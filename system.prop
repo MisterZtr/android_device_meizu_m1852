@@ -137,6 +137,9 @@ sys.qca1530=detect
 #Enable stm events
 persist.debug.coresight.config=stm-events
 
+#eBPF
+ro.kernel.ebpf.supported=false
+
 #hwui properties
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
