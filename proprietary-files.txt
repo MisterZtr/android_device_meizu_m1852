@@ -451,8 +451,9 @@ vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 # Peripheral manager
 vendor/bin/pm-proxy
 vendor/bin/pm-service
-vendor/lib/libperipheral_client.so
-vendor/lib64/libperipheral_client.so
+
+# Peripheral manager - from beholder - Nokia/Beholder_00WW/AOP_sprout:10/QKQ1.190725.002/00WW_5_13B:user/release-keys
+vendor/lib64/libperipheral_client.so|9475db86b218e2fd3b788993ff42cb79b7197c21
 
 # Power - from LA.UM.9.8.r1-02700-SDM710.0
 vendor/lib/hw/power.qcom.so|ad4c08f36aa361264a14a827729a69ac43f27178
