@@ -1,9 +1,3 @@
-#
-# Copyright (C) 2020 The MoKee Open Source Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 BOARD_VENDOR := meizu
 
 DEVICE_PATH := device/meizu/m1852
@@ -17,7 +11,7 @@ BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 # Assertion
-TARGET_OTA_ASSERT_DEVICE := m1852,M1852
+TARGET_OTA_ASSERT_DEVICE := m1852,M1852,meizu X8
 
 # Architecture
 TARGET_ARCH := arm64
