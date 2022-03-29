@@ -8,6 +8,8 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter m1852,$(TARGET_DEVICE)),)
 
+$(shell mkdir -p $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr)
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
 $(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
