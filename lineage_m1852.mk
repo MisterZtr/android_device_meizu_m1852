@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The MoKee Open Source Project
+# Copyright (C) 2018-2022 The MoKee Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,15 +22,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit from m1852 device
 $(call inherit-product, device/meizu/m1852/device.mk)
 
-# Inherit some common MoKee stuff.
+# Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Sakura Flags
+SAKURA_MAINTAINER := MisterZtr
+SAKURA_GAPPS := true
+LAWNCHAIR_OPTOUT := false
 
 
 PRODUCT_NAME := lineage_m1852
 PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1852
 PRODUCT_MANUFACTURER := Meizu
-PRODUCT_MODEL := meizu X8
+PRODUCT_MODEL := X8
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="M1852" \
