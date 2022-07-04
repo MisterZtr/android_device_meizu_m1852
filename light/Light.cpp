@@ -18,12 +18,10 @@
 #define LED_OFF 0
 #define LED_BLINK 10
 
-#define LCD_BRIGHTNESS_MIN 10 // Matches config_screenBrightnessSettingMinimum
-#define LCD_BRIGHTNESS_MAX 255
-#define LCD_BRIGHTNESS_DELTA (LCD_BRIGHTNESS_MAX - LCD_BRIGHTNESS_MIN)
-
 namespace {
 using android::hardware::light::V2_0::LightState;
+
+#define BRIGHTNESS_MAX 255
 
 static uint32_t rgbToBrightness(const LightState& state) {
     uint32_t color = state.color & 0x00ffffff;
@@ -33,14 +31,6 @@ static uint32_t rgbToBrightness(const LightState& state) {
 
 static bool isLit(const LightState& state) {
     return (state.color & 0x00ffffff);
-}
-
-static uint32_t applyGamma(const uint32_t brightness){
-    if(brightness < LCD_BRIGHTNESS_MIN)
-        return 0;
-
-    return LCD_BRIGHTNESS_MIN + LCD_BRIGHTNESS_DELTA *
-        cbrt(((double)brightness - LCD_BRIGHTNESS_MIN)/LCD_BRIGHTNESS_DELTA);
 }
 }  // anonymous namespace
 
@@ -110,8 +100,17 @@ void Light::setAttentionLight(const LightState& state) {
 
 void Light::setPanelBacklight(const LightState& state) {
     std::lock_guard<std::mutex> lock(mLock);
+
     uint32_t brightness = rgbToBrightness(state);
-    brightness = applyGamma(brightness);
+
+    int old_brightness = brightness;
+
+    if (brightness > BRIGHTNESS_MAX){
+        brightness = BRIGHTNESS_MAX;
+    }
+
+    LOG(VERBOSE) << "scaling brightness " << old_brightness << " => " << brightness;
+
     set(PANEL_BRIGHTNESS_PATH, brightness);
 }
 
@@ -136,4 +135,3 @@ void Light::setSpeakerBatteryLightLocked() {
 }  // namespace light
 }  // namespace hardware
 }  // namespace android
-

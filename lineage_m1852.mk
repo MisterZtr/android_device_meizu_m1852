@@ -1,6 +1,5 @@
 #
 # Copyright (C) 2018 The MoKee Open Source Project
-# Copyright (C) 2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,29 +20,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit from m1852 device
-$(call inherit-product, device/meizu/m1852/m1852.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
+$(call inherit-product, device/meizu/m1852/device.mk)
 
-# Inherit some common LineageOS stuff.
+# Inherit some common MoKee stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Sakura Flags
-SAKURA_MAINTAINER := MisterZtr
-SAKURA_BUILD_TYPE=basicgapps
-
-# And credits to XiNGRZ again
 
 PRODUCT_NAME := lineage_m1852
 PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1852
 PRODUCT_MANUFACTURER := Meizu
-PRODUCT_MODEL := X8
-
-PRODUCT_GMS_CLIENTID_BASE := android-meizu
+PRODUCT_MODEL := meizu X8
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="M1852" \
-    PRODUCT_NAME="meizu_M1852_CN" \
-    PRIVATE_BUILD_DESC="meizu_M1852_CN-user 8.1.0 OPM1.171019.026 1592244368 release-keys"
+    PRODUCT_NAME="meizu_X8" \
+    PRIVATE_BUILD_DESC="walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys"
 
-BUILD_FINGERPRINT := Meizu/meizu_M1852_CN/M1852:8.1.0/OPM1.171019.026/1592244368:user/release-keys
+BUILD_FINGERPRINT := google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys \
+    ro.build.description=walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.sf.lcd_density=400
