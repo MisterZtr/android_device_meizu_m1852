@@ -11,7 +11,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage \
+    $(LOCAL_PATH)/overlay-extended \
     $(LOCAL_PATH)/overlay-m1852 \
     $(LOCAL_PATH)/overlay-device
 
@@ -261,10 +261,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.meizu_m1852
 
 # Input
 PRODUCT_COPY_FILES += \
