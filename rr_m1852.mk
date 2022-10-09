@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2018-2022 The MoKee Open Source Project
+# Copyright (C) 2018 The MoKee Open Source Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,20 +24,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 $(call inherit-product, device/meizu/m1852/device.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common RROS stuff.
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
+TARGET_FACE_UNLOCK_SUPPORTED := true
+RR_BUILDTYPE := Unofficial
+BUILD_RR_WALLPAPERS := true
 
-# Sakura Flags
-SAKURA_MAINTAINER := MisterZtr
-SAKURA_GAPPS := true
-LAWNCHAIR_OPTOUT := true
+# And credits to XiNGRZ again
 
-
-PRODUCT_NAME := lineage_m1852
+PRODUCT_NAME := rr_m1852
 PRODUCT_BRAND := Meizu
 PRODUCT_DEVICE := m1852
 PRODUCT_MANUFACTURER := Meizu
 PRODUCT_MODEL := X8
+
+PRODUCT_GMS_CLIENTID_BASE := android-meizu
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="M1852" \
