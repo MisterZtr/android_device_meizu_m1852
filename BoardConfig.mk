@@ -18,7 +18,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 # Kernel
 BOARD_KERNEL_CMDLINE += g_android.luns=1 g_android.removable=1 g_android.cdrom=1
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
 # HAX: Remove ASAP
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -28,9 +27,6 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-
-# Releasetools
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
