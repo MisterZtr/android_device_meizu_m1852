@@ -19,6 +19,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
+#$(call inherit-product, device/meizu/m1852/crDroid.mk)
 
 # Inherit from m1852 device
 $(call inherit-product, device/meizu/m1852/m1852.mk)

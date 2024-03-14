@@ -1,0 +1,24 @@
+{
+	"response": [
+		{
+			"maintainer": "MisterZtr",
+			"oem": "Meizu",
+			"device": "Meizu X8",
+			"filename": "crDroidAndroid-11.0-20240314-m1852-v7.39.zip",
+			"download": "https://sourceforge.net/projects/m1852firmwares/files/crDroid/crDroidAndroid-11.0-20240314-m1852-v7.39.zip/download",
+			"timestamp": 1710432212,
+			"md5": "59a97d3dfedf5b1f1b12f935ba77d692",
+			"size": 983354833,
+			"version": "7.39",
+            "buildtype": "LTS",
+            "forum": "https://4pda.to/forum/index.php?showtopic=965227",
+            "gapps": "https://nikgapps.com/downloads",
+            "firmware": "",
+            "modem": "",
+            "bootloader": "",
+            "recovery": "https://sourceforge.net/projects/m1852recovery/files/OrangeFox/",
+            "paypal": "",
+            "telegram": ""
+		}
+    ]
+}
